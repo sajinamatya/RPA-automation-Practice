@@ -1,7 +1,8 @@
 import requests
 from robocorp import workitems
 from robocorp.tasks import task
-# consumer task
+
+# consumer task the work-item create through the producer taskflow is used to consume the data then post request is send to the designated URL 
 @task
 def consume_traffic_data():
     """
@@ -47,5 +48,6 @@ def post_traffic_data_to_sales_system(data):
 # Validate the traffic data 
 def validate_traffic_data(traffic_data):
     """ function which returns true if the country code is valied i.e 3 codes"""
-    return len(traffic_data["country"]) == 3 # return True if the country code is valid else false 
+    # return True if the country code is valid else false 
+    return len(traffic_data["country"]) == 3 
 
